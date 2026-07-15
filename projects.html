@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Raj Saxena</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="shortcut icon" href="CSS/Logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Inline script to set theme before page renders to prevent flashing -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'light' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.classList.add('light');
+        } else {
+            document.documentElement.classList.remove('light');
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header" class="site-header">
+        <div class="container header-container">
+            <a href="Index.html" class="logo">Raj Saxena</a>
+            <nav class="main-nav">
+                <a href="Index.html" class="nav-link">Home</a>
+                <a href="Projects.html" class="nav-link active">Projects</a>
+                <a href="Index.html#about" class="nav-link">About</a>
+                <a href="Index.html#experience" class="nav-link">Experience</a>
+                <a href="Index.html#skills" class="nav-link">Skills</a>
+                <a href="Index.html#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="https://linkedin.com/in/mysparkal" target="_blank" class="social-icon" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect width="4" height="12" x="2" y="9" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+                <a href="https://x.com/mysparkal" target="_blank" class="social-icon" aria-label="X">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                    </svg>
+                </a>
+                <button id="theme-toggle" type="button" class="social-icon theme-toggle-btn">
+                    <svg id="theme-toggle-dark-icon" class="icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 8.486a1 1 0 011.414 0l.707-.707a1 1 0 111.414 1.414l-.707-.707a1 1 0 01-1.414 0zM3 11a1 1 0 100 2H2a1 1 0 100-2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-header-actions">
+                <button id="theme-toggle-mobile" type="button" class="social-icon theme-toggle-btn">
+                    <svg id="theme-toggle-dark-icon-mobile" class="icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon-mobile" class="icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 8.486a1 1 0 011.414 0l.707-.707a1 1 0 111.414 1.414l-.707-.707a1 1 0 01-1.414 0zM3 11a1 1 0 100 2H2a1 1 0 100-2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <button id="mobile-menu-button" class="mobile-menu-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+                        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <button id="mobile-menu-close-button" class="mobile-menu-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M18 6l-12 12" />
+                <path d="M6 6l12 12" />
+            </svg>
+        </button>
+        <a href="Index.html" class="nav-link">Home</a>
+        <a href="Projects.html" class="nav-link">Projects</a>
+        <a href="Index.html#about" class="nav-link">About</a>
+        <a href="Index.html#experience" class="nav-link">Experience</a>
+        <a href="Index.html#skills" class="nav-link">Skills</a>
+        <a href="Index.html#contact" class="nav-link">Contact</a>
+        <div class="mobile-menu-divider">
+            <h3>Connect</h3>
+            <div class="mobile-social-icons">
+                <a href="https://linkedin.com/in/mysparkal" target="_blank" class="social-icon"
+                    aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect width="4" height="12" x="2" y="9" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg></a>
+                <a href="https://x.com/mysparkal" target="_blank" class="social-icon" aria-label="X"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                    </svg></a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section id="projects" class="section animated-section">
+            <div class="container">
+                <h2 class="section-title">My Projects</h2>
+                <p class="section-subtitle">
+                    Here are some of the projects I've worked on. Each project showcases my skills in problem-solving,
+                    technical implementation, and my passion for creating efficient, user-friendly solutions.
+                </p>
+
+                <div class="projects-grid">
+
+                    <!-- INSTRUCTIONS: To add a new project, copy the entire block from  PROJECT CARD START -->
+                    <!-- PROJECT CARD END and paste it below. Then, update the content (image src, title, description, tags, and links).-->
+
+
+                    <!-- PROJECT CARD 1 START -->
+                    <div class="card project-card">
+                        <div class="project-image-container">
+                            <img src="https://images.unsplash.com/photo-1676108325627-0013cec281b5?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Project 2 Title">
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="card-title">Love Calculator</h3>
+                            <p class="project-description">A calculator which calculate the love between two persons.
+                            </p>
+                            <h4 class="card-subtitle">Technologies Used:</h4>
+                            <div class="tag-container">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://mysparkal.github.io/Love-calculator/" target="_blank"
+                                class="btn btn-primary">Experience</a>
+                        </div>
+                    </div>
+                    <!-- PROJECT CARD 1 END -->
+
+                    <!-- PROJECT CARD 2 START -->
+                    <div class="card project-card">
+                        <div class="project-image-container">
+                            <img src="https://plus.unsplash.com/premium_photo-1673735396428-d51dc2a7a62d?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Project 3 Title">
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="card-title">Tic Tac Toe</h3>
+                            <p class="project-description">A game in which one player draws Xs and another player draws
+                                Os inside a set of nine squares and each player tries to be the first to fill a row of
+                                squares with either Xs or Os</p>
+                            <h4 class="card-subtitle">Technologies Used:</h4>
+                            <div class="tag-container">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS Grid</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Canvas</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://mysparkal.github.io/TTT/" target="_blank"
+                                class="btn btn-primary">Experience</a>
+                        </div>
+                    </div>
+                    <!-- PROJECT CARD 2 END -->
+
+                    <!-- PROJECT CARD 3 START -->
+                    <div class="card project-card">
+                        <div class="project-image-container">
+                            <img src="https://plus.unsplash.com/premium_photo-1661628680845-39b71e9be303?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Project 3 Title">
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="card-title">Type Test</h3>
+                            <p class="project-description">Allow users to assess and improve their typing speed and
+                                accuracy</p>
+                            <h4 class="card-subtitle">Technologies Used:</h4>
+                            <div class="tag-container">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://mysparkal.github.io/TypeTest/" target="_blank"
+                                class="btn btn-primary">Experience</a>
+                        </div>
+                    </div>
+                    <!-- PROJECT CARD 3 END -->
+
+                    <!-- PROJECT CARD 4 START -->
+                    <div class="card project-card">
+                        <div class="project-image-container">
+                            <img src="https://plus.unsplash.com/premium_photo-1731439886498-d09d6472dfb3?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Project 3 Title">
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="card-title">Minde Reader</h3>
+                            <p class="project-description">A game that guess the exact number which you are thinking by
+                                performing some calculations like it read your mind</p>
+                            <h4 class="card-subtitle">Technologies Used:</h4>
+                            <div class="tag-container">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://mysparkal.github.io/MindReader/" target="_blank"
+                                class="btn btn-primary">Experience</a>
+                        </div>
+                    </div>
+                    <!-- PROJECT CARD 4 END -->
+
+                    <!-- PROJECT CARD 5 START -->
+                    <div class="card project-card">
+                        <div class="project-image-container">
+                            <img src="https://plus.unsplash.com/premium_photo-1699387204388-120141c76d51?q=80&w=1678&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Project 3 Title">
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="card-title">BMI Calculator</h3>
+                            <p class="project-description">A BMI (Body Mass Index) Calculator is a tool that estimates whether a person's weight is within a healthy range based on their height and weight.</p>
+                            <h4 class="card-subtitle">Technologies Used:</h4>
+                            <div class="tag-container">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://mysparkal.github.io/BMI-Calculator/" target="_blank"
+                                class="btn btn-primary">Experience</a>
+                        </div>
+                    </div>
+                    <!-- PROJECT CARD 5 END -->
+
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section section-alt animated-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+                    vision. Feel free to reach out!
+                </p>
+                <div class="grid-2-col contact-grid">
+                    <div class="card contact-details">
+                        <div class="contact-item">
+                            <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>Email</h3>
+                            <a href="mailto:ea.rajsaxena@gmail.com">ea.rajsaxena@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>Phone</h3>
+                            <a href="tel:+919410062689">+91 9410062689</a>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Connect with Me</h3>
+                            <div class="contact-social-icons">
+                                <a href="https://linkedin.com/in/mysparkal" class="social-icon-bg"
+                                    aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                        <rect width="4" height="12" x="2" y="9" />
+                                        <circle cx="4" cy="4" r="2" />
+                                    </svg></a>
+                                <a href="https://x.com/mysparkal" class="social-icon-bg" aria-label="X"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                                    </svg></a>
+                                <a href="https://facebook.com/mysparkal" class="social-icon-bg"
+                                    aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                    </svg></a>
+                                <a href="https://instagram.com/mysparkal" class="social-icon-bg"
+                                    aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                                    </svg></a>
+                                <a href="https://g.dev/mysparkal" target="_blank" class="social-icon-bg"
+                                    aria-label="Google Developers"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 48 48">
+                                        <path fill="#EA4335"
+                                            d="M24 9.5c3.15 0 5.6 1.37 6.89 2.52l5.06-4.91C32.5 4.4 28.74 3 24 3 14.72 3 6.97 9.64 4.33 18.26l6.59 5.12C12.24 15.07 17.57 9.5 24 9.5z" />
+                                        <path fill="#34A853"
+                                            d="M24 44.98c5.78 0 10.63-1.91 14.18-5.18l-6.57-5.47C29.65 36.03 27.1 36.9 24 36.9c-6.28 0-11.63-4.24-13.54-9.94l-6.6 5.1C6.98 40.52 14.92 44.98 24 44.98z" />
+                                        <path fill="#4A90E2"
+                                            d="M43.6 24.54c0-1.65-.15-3.24-.43-4.77H24v9.02h11.12c-.48 2.45-1.91 4.54-4.11 5.94l6.57 5.47C41.96 36.03 43.6 30.74 43.6 24.54z" />
+                                        <path fill="#FBBC05"
+                                            d="M10.46 26.96A14.58 14.58 0 0 1 9.44 24c0-.98.17-1.93.48-2.83l-6.6-5.11A21.946 21.946 0 0 0 2 24c0 3.47.83 6.76 2.32 9.7l6.59-5.12h-.45z" />
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST"
+                            class="contact-form">
+                            <input type="hidden" name="access_key" value="9509f166-a7a9-4d7f-bc75-a5a9f41d6a0f">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Contact Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="purpose">Purpose for Contact</label>
+                                <textarea id="purpose" name="purpose" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Contact</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; <span id="currentYear"></span> Raj Saxena. All Rights Reserved.</p>
+        <p class="footer-note">Designed with <span>&hearts;</span> and a touch of modern tech.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m5 12 7-7 7 7M12 19V5" />
+        </svg>
+    </button>
+
+    <script src="JS/Script.js"></script>
+</body>
+
+</html>

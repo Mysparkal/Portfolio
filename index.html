@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Saxena</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="shortcut icon" href="CSS/Logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    
+    <!-- Inline script to set theme before page renders to prevent flashing -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'light' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.classList.add('light');
+        } else {
+            document.documentElement.classList.remove('light');
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header" class="site-header">
+        <div class="container header-container">
+            <a href="#" class="logo">Raj Saxena</a>
+            <nav class="main-nav">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="Projects.html" class="nav-link">Projects</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#achievements" class="nav-link">Achievements</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="https://linkedin.com/in/mysparkal" target="_blank" class="social-icon" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
+                </a>
+                <a href="https://x.com/mysparkal" target="_blank" class="social-icon" aria-label="X">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" /></svg>
+                </a>
+                <button id="theme-toggle" type="button" class="social-icon theme-toggle-btn">
+                    <svg id="theme-toggle-dark-icon" class="icon" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="icon" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 8.486a1 1 0 011.414 0l.707-.707a1 1 0 111.414 1.414l-.707-.707a1 1 0 01-1.414 0zM3 11a1 1 0 100 2H2a1 1 0 100-2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+             <div class="mobile-header-actions">
+                 <button id="theme-toggle-mobile" type="button" class="social-icon theme-toggle-btn">
+                    <svg id="theme-toggle-dark-icon-mobile" class="icon" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon-mobile" class="icon" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 8.486a1 1 0 011.414 0l.707-.707a1 1 0 111.414 1.414l-.707-.707a1 1 0 01-1.414 0zM3 11a1 1 0 100 2H2a1 1 0 100-2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                </button>
+                <button id="mobile-menu-button" class="mobile-menu-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <button id="mobile-menu-close-button" class="mobile-menu-close">
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+        </button>
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="Projects.html" class="nav-link">Projects</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <div class="mobile-menu-divider">
+            <h3>Connect</h3>
+            <div class="mobile-social-icons">
+                 <a href="https://linkedin.com/in/mysparkal" target="_blank" class="social-icon" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg></a>
+                 <a href="https://x.com/mysparkal" target="_blank" class="social-icon" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" /></svg></a>
+                 <a href="https://facebook.com/mysparkal" target="_blank" class="social-icon" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg></a>
+                 <a href="https://instagram.com/mysparkal" target="_blank" class="social-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg></a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section animated-section">
+            <div class="container">
+                <div class="grid-2-col hero-grid">
+                    <div class="hero-content">
+                        <h1 class="hero-title">RAJ SAXENA</h1>
+                        <p class="hero-subtitle">ERP & SAP Integration Specialist</p>
+                        <p class="hero-description">
+                            Leveraging profound expertise in ERP solutions and SAP integration to transform business operations through meticulous system integration and process optimization. Committed to empowering teams by delivering innovative technological frameworks and comprehensive support.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="https://drive.usercontent.google.com/u/0/uc?id=1nzy85aBlrMTepHAHKbUBebwBI6SDyfKO&export=download" target="_blank" class="btn btn-primary">Download CV</a>
+                            <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                        </div>
+                    </div>
+                    <div class="hero-image-container">
+                        <img src="CSS/IMAGE.jpg" alt="Raj Saxena" class="hero-image" onerror="this.onerror=null; this.src='https://placehold.co/400x400/CCCCCC/FFFFFF?text=Image+Not+Found';">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section animated-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="grid-2-col">
+                    <div class="card">
+                        <h3 class="card-title">Professional Summary</h3>
+                        <p>Experienced ERP Executive with 4+ years of expertise in the IT Department. Proficient in managing and supporting Open ERP, SAP systems (including SAP S/4 HANA), and ERP NEXT. Skilled in handling SAP PP (Production Planning) and QM (Quality Management) modules. Successfully implemented ERP NEXT at Brindavan Beverages Private Limited. Adept at providing technical support, training departments, and resolving queries related to SAP and production processes. Experienced in generating reports on SAP and Excel, with strong knowledge of Excel. Excellent communication and problem-solving skills. Proven ability to enhance system efficiency and ensure seamless ERP operations.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Passions & Hobbies</h3>
+                        <p>I thrive on the challenge of identifying issues, analyzing root causes, and implementing effective solutions. Dedicated to empowering colleagues through training sessions and one-on-one mentoring, ensuring they have the skills and understanding needed to excel.</p>
+                        <h4 class="card-subtitle">My Hobbies Include:</h4>
+                        <ul class="hobby-list">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m3 21 4-4" /><path d="m18.5 5.5-4.303 4.303a2.5 2.5 0 0 0 0 3.535l.808.808a2.5 2.5 0 0 0 3.535 0L22 10.848V8h-2.152Z" /><path d="m14.5 9.5.808.808a2.5 2.5 0 0 0 3.535 0L22 7.152V5h-2.152l-3.697 3.697a2.5 2.5 0 0 0 0 3.535L17 13" /><path d="M21 3 3 21" /></g></svg>Playing Cricket</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" /></svg>Traveling</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4m-12 8 4-4-4-4m8.5-4-5 16" /></svg>Coding</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.439 7.561C21.214 9.336 22 11.899 22 14.5V15a1 1 0 0 1-1 1h-3.5v3.5a1 1 0 0 1-1 1H15c-2.601 0-5.164-.786-6.939-2.561S4 15.101 4 12.5V12a1 1 0 0 1 1-1h3.5V7.5a1 1 0 0 1 1-1H11c2.601 0 5.164.786 6.939 2.561z" /><path d="M12.5 12H11v1.5a1 1 0 0 0 1 1h1.5V11a1 1 0 0 0-1-1z" /></svg>Solving Problems</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.7 10.2 18 9 18 7c0-2.2-1.8-4-4-4S9.8 4.8 9.8 7c0 2 .3 3.2 1.5 4.5.8.8 1.3 1.5 1.5 2.5M9 18h6m-5 4h4" /></svg>Exploring New Technologies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section section-alt animated-section">
+            <div class="container">
+                <h2 class="section-title">Work Experience</h2>
+                <div class="experience-list">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">ERP Executive</h3>
+                            <span>12/2024 - Present</span>
+                        </div>
+                        <p class="card-company">Designco Private Limited, Moradabad</p>
+                        <ul class="details-list">
+                            <li>Managing SAP PP, QM, and PM modules, ensuring efficient system operations and user support.</li>
+                            <li>Providing technical expertise for ERP systems to optimize production, quality, and maintenance.</li>
+                            <li>Conducting training sessions and resolving complex SAP and production workflow queries.</li>
+                            <li>Overseeing goods movement and streamlining operations using Open ERP and SAP.</li>
+                            <li>Generating comprehensive reports with SAP and Excel for data-driven decision-making.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                         <div class="card-header">
+                            <h3 class="card-title">IT Executive</h3>
+                            <span>07/2024 - 11/2024</span>
+                        </div>
+                        <p class="card-company">Brindavan Beverages Private Limited, Bareilly</p>
+                        <ul class="details-list">
+                            <li>Played a key role in implementing the ERP system, ensuring smooth transition and integration.</li>
+                            <li>Designed and developed new production processes within the ERP framework.</li>
+                            <li>Delivered training sessions to all departments on the new ERP system.</li>
+                            <li>Customized and configured ERP modules to align with specific production and operational needs.</li>
+                            <li>Provided ongoing support and troubleshooting for the ERP system post-implementation.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                         <div class="card-header">
+                            <h3 class="card-title">ERP Executive</h3>
+                            <span>04/2021 - 06/2024</span>
+                        </div>
+                        <p class="card-company">Designco Private Limited, Moradabad</p>
+                        <ul class="details-list">
+                            <li>Specialized in ERP systems and providing technical support for SAP PP and QM modules.</li>
+                            <li>Managed goods movement and optimized inventory and logistics using Open ERP.</li>
+                            <li>Oversaw configuration, maintenance, and user support of SAP PP and QM modules.</li>
+                            <li>Conducted training sessions to enhance SAP proficiency and resolved related queries.</li>
+                            <li>Generated detailed reports using SAP, Excel, and SQL.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section animated-section">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="grid-2-col">
+                    <div class="card">
+                        <h3 class="card-title">Technical Skills</h3>
+                        <div class="tag-container">
+                            <span class="tag">SAP PP</span><span class="tag">SAP QM</span><span class="tag">SAP PM</span><span class="tag">SAP S4 HANA</span><span class="tag">Open ERP</span><span class="tag">ERP NEXT</span><span class="tag">Goods Movement</span><span class="tag">MS Excel</span><span class="tag">SQL</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Professional Skills</h3>
+                        <div class="tag-container">
+                            <span class="tag">ERP Implementation</span><span class="tag">Technical Support</span><span class="tag">Problem Solving</span><span class="tag">Communication</span><span class="tag">Training & Mentoring</span><span class="tag">Process Optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="section section-alt animated-section">
+            <div class="container">
+                <h2 class="section-title">Key Achievements</h2>
+                <div class="grid-3-col">
+                    <div class="card">
+                        <div class="card-icon-header">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09zM12 15l-3-3a22 22 0 0 1 2-3.95A12.87 12.87 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2zM9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0m-5 8v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /></svg>
+                           <h3>ERP NEXT Implementation</h3>
+                        </div>
+                        <p>Successfully implemented ERP NEXT at Brindavan Beverages Private Limited, streamlining production processes...</p>
+                    </div>
+                     <div class="card">
+                        <div class="card-icon-header">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5v.343a4.501 4.501 0 0 0-3.58 3.215A4.5 4.5 0 0 0 8.42 14.5H9a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-.535A4.5 4.5 0 0 0 4 20.535V21a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-.465A4.5 4.5 0 0 0 15.535 16H15a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h.08a4.5 4.5 0 0 0 4.492-4.442A4.501 4.501 0 0 0 16.5 6.843V6.5A4.5 4.5 0 0 0 12 2Zm0 10.5a2.5 2.5 0 0 0 0-5a2.5 2.5 0 0 0 0 5Zm0 0a2.5 2.5 0 0 0 0 5a2.5 2.5 0 0 0 0-5Zm0 0a2.5 2.5 0 0 1 0-5a2.5 2.5 0 0 1 0 5Zm0 0a2.5 2.5 0 0 1 0 5a2.5 2.5 0 0 1 0-5ZM2.5 11.5a2.5 2.5 0 0 0 0-5a2.5 2.5 0 0 0 0 5Zm17 0a2.5 2.5 0 0 1 0-5a2.5 2.5 0 0 1 0 5Zm0 0a2.5 2.5 0 0 0 0 5a2.5 2.5 0 0 0 0-5Zm-17 0a2.5 2.5 0 0 1 0 5a2.5 2.5 0 0 1 0-5ZM9.5 5.5a2.5 2.5 0 0 0 0-5a2.5 2.5 0 0 0 0 5Zm5 0a2.5 2.5 0 0 1 0-5a2.5 2.5 0 0 1 0 5ZM9.5 19.5a2.5 2.5 0 0 1 0-5a2.5 2.5 0 0 1 0 5Zm5 0a2.5 2.5 0 0 0 0-5a2.5 2.5 0 0 0 0 5Z" /></svg>
+                           <h3>Strong Problem Solving</h3>
+                        </div>
+                        <p>Adept at diagnosing complex SAP issues and implementing effective solutions, minimizing downtime...</p>
+                    </div>
+                     <div class="card">
+                        <div class="card-icon-header">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Zm7.93-10.84c-.42.04-.83.12-1.22.24-.9.29-1.78.74-2.52 1.32a3.5 3.5 0 0 0-1.19 4.28l2.4 4.2a1.5 1.5 0 0 0 2.6-.42l.91-1.82a1.5 1.5 0 0 1 2.6-.4l.2.4a1.5 1.5 0 0 0 2.7-.7l1-3.5c.31-1.1.43-2.3.19-3.51S17.2 9.2 15.83 9.16Z" /></svg>
+                           <h3>Effective Communication</h3>
+                        </div>
+                        <p>Excel in conveying complex technical information clearly and concisely, ensuring colleagues can understand...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section animated-section">
+            <div class="container">
+                <h2 class="section-title">Education & Certifications</h2>
+                <div class="grid-2-col">
+                    <div>
+                        <h3 class="subsection-title">Education</h3>
+                        <div class="education-list">
+                            <div class="card">
+                                <h4>Pursuing BCA</h4>
+                                <p class="institution">Indira Gandhi National Open University, New Delhi</p>
+                                <p class="date">12/2021 - Present</p>
+                            </div>
+                            <div class="card">
+                                <h4>B.COM</h4>
+                                <p class="institution">Mahatma Jyotiba Phule Rohilkhand University, Bareilly</p>
+                                <p class="date">06/2018 - 06/2021</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="subsection-title">Certifications</h3>
+                        <div class="education-list">
+                            <div class="card">
+                                <h4>CCC Certificate</h4>
+                                <p>A government certification exam in India that tests basic knowledge of computer skills.</p>
+                            </div>
+                            <div class="card">
+                                <h4>Computer Diploma</h4>
+                                <p>Covers the fundamentals of computer applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section section-alt animated-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!
+                </p>
+                <div class="grid-2-col contact-grid">
+                    <div class="card contact-details">
+                        <div class="contact-item">
+                            <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>Email</h3>
+                            <a href="mailto:ea.rajsaxena@gmail.com">ea.rajsaxena@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>Phone</h3>
+                            <a href="tel:+919410062689">+91 9410062689</a>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Connect with Me</h3>
+                             <div class="contact-social-icons">
+                                <a href="https://linkedin.com/in/mysparkal" class="social-icon-bg" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg></a>
+                                <a href="https://x.com/mysparkal" class="social-icon-bg" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" /></svg></a>
+                                <a href="https://facebook.com/mysparkal" class="social-icon-bg" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg></a>
+                                <a href="https://instagram.com/mysparkal" class="social-icon-bg" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg></a>
+                                <a href="https://g.dev/mysparkal" target="_blank" class="social-icon-bg" aria-label="Google Developers"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.15 0 5.6 1.37 6.89 2.52l5.06-4.91C32.5 4.4 28.74 3 24 3 14.72 3 6.97 9.64 4.33 18.26l6.59 5.12C12.24 15.07 17.57 9.5 24 9.5z" /><path fill="#34A853" d="M24 44.98c5.78 0 10.63-1.91 14.18-5.18l-6.57-5.47C29.65 36.03 27.1 36.9 24 36.9c-6.28 0-11.63-4.24-13.54-9.94l-6.6 5.1C6.98 40.52 14.92 44.98 24 44.98z" /><path fill="#4A90E2" d="M43.6 24.54c0-1.65-.15-3.24-.43-4.77H24v9.02h11.12c-.48 2.45-1.91 4.54-4.11 5.94l6.57 5.47C41.96 36.03 43.6 30.74 43.6 24.54z" /><path fill="#FBBC05" d="M10.46 26.96A14.58 14.58 0 0 1 9.44 24c0-.98.17-1.93.48-2.83l-6.6-5.11A21.946 21.946 0 0 0 2 24c0 3.47.83 6.76 2.32 9.7l6.59-5.12h-.45z" /></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                            <input type="hidden" name="access_key" value="9509f166-a7a9-4d7f-bc75-a5a9f41d6a0f">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Contact Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                             <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                             <div class="form-group">
+                                <label for="purpose">Purpose for Contact</label>
+                                <textarea id="purpose" name="purpose" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Contact</button>
+                        </form>
+                        <div id="form-result"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; <span id="currentYear"></span> Raj Saxena. All Rights Reserved.</p>
+        <p class="footer-note">Designed with <span>&hearts;</span> and a touch of modern tech.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7M12 19V5" /></svg>
+    </button>
+
+    <script src="JS/Script.js"></script>
+</body>
+</html>

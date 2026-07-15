@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Maintenance | Raj Saxena</title>
+    <!-- Using the same favicon from your portfolio -->
+    <link rel="shortcut icon" href="CSS/Logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Inline script to set theme before page renders to prevent flashing -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'light' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.classList.add('light');
+        } else {
+            document.documentElement.classList.remove('light');
+        }
+    </script>
+
+    <style>
+        /*================================================
+          CSS VARIABLES & THEME SETUP
+        ================================================*/
+        :root {
+            /* Dark Theme (Default) */
+            --color-bg: #111827;
+            --color-bg-secondary: #1F2937;
+            --color-text-primary: #E5E7EB;
+            --color-text-secondary: #D1D5DB;
+            --color-text-muted: #9CA3AF;
+            --color-accent-primary: #3B82F6;
+            --color-accent-primary-hover: #2563EB;
+            --color-accent-secondary: #60A5FA;
+            --color-accent-tertiary: #93C5FD;
+            --color-border: #374151;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+            --gradient-card: var(--color-bg-secondary);
+        }
+
+        html.light {
+            /* Light Theme */
+            --color-bg: #F9FAFB;
+            --color-bg-secondary: #FFFFFF;
+            --color-text-primary: #1F2937;
+            --color-text-secondary: #4B5563;
+            --color-text-muted: #6B7280;
+            --color-accent-primary: #F97316;
+            /* Orange */
+            --color-accent-primary-hover: #EA580C;
+            /* Darker Orange */
+            --color-accent-secondary: #38BDF8;
+            /* Sky Blue */
+            --color-accent-tertiary: #fb923c;
+            /* Lighter Orange */
+            --color-border: #E5E7EB;
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --gradient-card: linear-gradient(135deg, #fff7ed 0%, #f0f9ff 100%);
+            /* Orange-50 to Sky-50 */
+        }
+
+        /*================================================
+          ANIMATIONS
+        ================================================*/
+        @keyframes fadeInSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotateCog {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /*================================================
+          BASE & PAGE STYLES
+        ================================================*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow: hidden;
+            /* Prevent scrollbars from animations */
+        }
+
+        .maintenance-container {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .maintenance-card {
+            background: var(--gradient-card);
+            border-radius: 0.75rem;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px var(--shadow-color);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        /* Staggered animation for card elements */
+        .maintenance-card>* {
+            opacity: 0;
+            /* Start invisible */
+            animation: fadeInSlideUp 0.7s 0.2s ease-out forwards;
+        }
+
+        .maintenance-icon {
+            animation-delay: 0.2s;
+        }
+
+        .maintenance-title {
+            animation-delay: 0.4s;
+        }
+
+        .maintenance-text:nth-of-type(1) {
+            animation-delay: 0.6s;
+        }
+
+        .maintenance-text:nth-of-type(2) {
+            animation-delay: 0.8s;
+        }
+
+        .contact-social-icons {
+            animation-delay: 1.0s;
+        }
+
+        .maintenance-icon {
+            color: var(--color-accent-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Apply rotating animation to the SVG icon */
+        .maintenance-icon svg {
+            animation: rotateCog 12s linear infinite;
+        }
+
+        .maintenance-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--color-accent-tertiary);
+            margin-bottom: 1rem;
+        }
+
+        .maintenance-text {
+            color: var(--color-text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .contact-social-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-icon-bg {
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            background-color: var(--color-bg);
+            border-radius: 50%;
+            color: var(--color-text-primary);
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+            text-decoration: none;
+        }
+
+        .social-icon-bg:hover {
+            background-color: var(--color-accent-primary);
+            color: #fff;
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .social-icon-bg svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /*================================================
+          THEME TOGGLE FIX & ANIMATION
+        ================================================*/
+        .theme-toggle-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            color: var(--color-text-muted);
+            transition: color 0.2s ease;
+            width: 1.75rem;
+            /* Set fixed size for positioning */
+            height: 1.75rem;
+        }
+
+        .theme-toggle-btn:hover {
+            color: var(--color-accent-secondary);
+        }
+
+        .theme-toggle-btn .icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Default state (Dark Mode) */
+        #theme-toggle-light-icon {
+            opacity: 0;
+            transform: scale(0.7) rotate(-90deg);
+        }
+
+        #theme-toggle-dark-icon {
+            opacity: 1;
+            transform: scale(1) rotate(0);
+        }
+
+        /* State for Light Mode */
+        html.light #theme-toggle-light-icon {
+            opacity: 1;
+            transform: scale(1) rotate(0);
+        }
+
+        html.light #theme-toggle-dark-icon {
+            opacity: 0;
+            transform: scale(0.7) rotate(90deg);
+        }
+
+        /*================================================
+          FOOTER
+        ================================================*/
+        .site-footer {
+            background-color: transparent;
+            text-align: center;
+            padding: 2rem;
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+            opacity: 0;
+            animation: fadeInSlideUp 0.7s 1.2s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" type="button" class="theme-toggle-btn" aria-label="Toggle theme">
+        <svg id="theme-toggle-dark-icon" class="icon" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+        <svg id="theme-toggle-light-icon" class="icon" fill="currentColor" viewBox="0 0 20 20">
+            <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 8.486a1 1 0 011.414 0l.707-.707a1 1 0 111.414 1.414l-.707-.707a1 1 0 01-1.414 0zM3 11a1 1 0 100 2H2a1 1 0 100-2h1z"
+                fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+    </button>
+
+    <main class="maintenance-container">
+        <div class="maintenance-card">
+            <div class="maintenance-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+                    <circle cx="12" cy="12" r="3" />
+                </svg>
+            </div>
+            <h1 class="maintenance-title">System Maintenance in Progress</h1>
+            <p class="maintenance-text">
+                We're currently performing some upgrades to make your experience even better. We'll be back online
+                shortly. Thank you for your patience!
+            </p>
+            <p class="maintenance-text" style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 0;">In
+                the meantime, you can connect with me here:</p>
+            <div class="contact-social-icons">
+                <a href="https://linkedin.com/in/mysparkal" target="_blank" class="social-icon-bg"
+                    aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect width="4" height="12" x="2" y="9" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg></a>
+                <a href="https://x.com/mysparkal" target="_blank" class="social-icon-bg" aria-label="X"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                    </svg></a>
+                <a href="https://facebook.com/mysparkal" target="_blank" class="social-icon-bg"
+                    aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg></a>
+                <a href="https://instagram.com/mysparkal" target="_blank" class="social-icon-bg"
+                    aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg></a>
+                <a href="https://g.dev/mysparkal" target="_blank" class="social-icon-bg"
+                    aria-label="Google Developers"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 48 48">
+                        <path fill="#EA4335"
+                            d="M24 9.5c3.15 0 5.6 1.37 6.89 2.52l5.06-4.91C32.5 4.4 28.74 3 24 3 14.72 3 6.97 9.64 4.33 18.26l6.59 5.12C12.24 15.07 17.57 9.5 24 9.5z" />
+                        <path fill="#34A853"
+                            d="M24 44.98c5.78 0 10.63-1.91 14.18-5.18l-6.57-5.47C29.65 36.03 27.1 36.9 24 36.9c-6.28 0-11.63-4.24-13.54-9.94l-6.6 5.1C6.98 40.52 14.92 44.98 24 44.98z" />
+                        <path fill="#4A90E2"
+                            d="M43.6 24.54c0-1.65-.15-3.24-.43-4.77H24v9.02h11.12c-.48 2.45-1.91 4.54-4.11 5.94l6.57 5.47C41.96 36.03 43.6 30.74 43.6 24.54z" />
+                        <path fill="#FBBC05"
+                            d="M10.46 26.96A14.58 14.58 0 0 1 9.44 24c0-.98.17-1.93.48-2.83l-6.6-5.11A21.946 21.946 0 0 0 2 24c0 3.47.83 6.76 2.32 9.7l6.59-5.12h-.45z" />
+                    </svg></a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="currentYear"></span> Raj Saxena. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Theme Toggling Logic ---
+            const themeToggleBtn = document.getElementById('theme-toggle');
+
+            const toggleTheme = () => {
+                const isCurrentlyLight = document.documentElement.classList.toggle('light');
+                localStorage.setItem('color-theme', isCurrentlyLight ? 'light' : 'dark');
+            };
+
+            if (themeToggleBtn) {
+                themeToggleBtn.addEventListener('click', toggleTheme);
+            }
+
+            // --- Set current year in footer ---
+            const currentYearEl = document.getElementById('currentYear');
+            if (currentYearEl) {
+                currentYearEl.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+</body>
+
+</html>
